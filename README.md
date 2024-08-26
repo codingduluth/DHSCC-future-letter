@@ -1,5 +1,5 @@
 
-# Encrypted Letter API
+# DHSCC FUTURE LETTER ENCRYPTION & DECRYPTION API
 
 This project provides an API for creating and retrieving encrypted letters using Node.js and MongoDB. The letters are encrypted using AES-256 encryption to ensure data security.
 
@@ -36,13 +36,13 @@ This project provides an API for creating and retrieving encrypted letters using
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/encrypted-letter-api.git
+   git clone https://github.com/uzziel1/DHSCC-future-letter.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd encrypted-letter-api
+   cd DHSCC-future-letter
    ```
 
 3. Install the required dependencies:
