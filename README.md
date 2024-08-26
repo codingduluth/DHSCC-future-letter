@@ -80,14 +80,6 @@ This project provides an API for creating and retrieving encrypted letters using
   - **Status 201**: Letter created successfully.
     ```json
     {
-      "letter": {
-        "letter": "encrypted_letter_here",
-        "iv": "initialization_vector_here",
-        "createdBy": "user_id_here"
-      }
-    }
-
-    {
     "letter": {
         "name": "user_name_here",
         "letter": "encrypted_letter_here",
