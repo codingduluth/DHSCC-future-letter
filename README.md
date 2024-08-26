@@ -105,7 +105,7 @@ This project provides an API for creating and retrieving encrypted letters using
   - **Status 200**: Letter retrieved successfully.
     ```json
     {
-      "name": "user+name_here"
+      "name": "user_name_here"
       "letter": "decrypted_letter_here"
     }
     ```
