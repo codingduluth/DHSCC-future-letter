@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DHSCC Future Letter</title>
     <link rel="stylesheet" href="./css/sign-up.css" />
+    <link rel="stylesheet" href="./css/error-message.css" />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
+    <div class="alert hide">
+      <span class="fas fa-exclamation-circle"></span>
+      <span class="msg">Warning: This is a warning alert!</span>
+      <div class="close-btn">
+        <span class="fas fa-times"></span>
+      </div>
+    </div>
     <!--  <div class="background">
       <p class="register-form-text">Register Form</p>
       <div>
@@ -39,9 +51,10 @@
       </div>
       <footer>
         <p>Already have an account?</p>
-        <a href="#">Login Here</a>
+        <a href="/login">Login Here</a>
       </footer>
-      <script src="register.js"></script>
+      <script src="../src/error-message.js"></script>
+      <script src="../src/register.js"></script>
     </div>
   </body>
 </html>

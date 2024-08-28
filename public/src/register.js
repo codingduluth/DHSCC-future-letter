@@ -1,34 +1,45 @@
+localStorage.clear();
+
 document
   .getElementById('register-form')
   .addEventListener('submit', async function (event) {
     event.preventDefault(); // Prevent form from submitting the default way
 
     const formData = {
-      fullname: document.getElementById('full-name').value,
+      name: document.getElementById('full-name').value,
       email: document.getElementById('email').value,
       password: document.getElementById('password').value,
     };
 
     try {
-      const response = await fetch('https://your-backend-url.com/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        'http://localhost:3000/api/v1/auth/register',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         const result = await response.json();
-        alert('Registration successful!');
+        const token = result.user.token;
+        localStorage.setItem('token', token);
+        localStorage.setItem('name', result.user.name); // Store name
+
+        window.location.href = '/html/letters.html';
         // Handle success (e.g., redirect to another page)
       } else {
         const error = await response.json();
-        alert('Registration failed: ' + error.message);
+        displayErrorMessage(error.msg);
+
         // Handle error (e.g., display an error message)
       }
     } catch (error) {
       console.error('Error:', error);
+      console.log(error);
       alert('An unexpected error occurred. Please try again.');
     }
   });

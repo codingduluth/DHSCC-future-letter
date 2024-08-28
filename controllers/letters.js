@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { StatusCodes } = require('http-status-codes'); //Figure out how this works
+const { StatusCodes } = require('http-status-codes');
 const Letter = require('../models/Letter');
 const crypto = require('crypto');
 

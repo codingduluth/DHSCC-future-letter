@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DHSCC Future Letter</title>
+    <link rel="stylesheet" href="../css/letters.css" />
+    <link rel="stylesheet" href="../css/error-message.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="alert hide">
+      <span class="fas fa-exclamation-circle"></span>
+      <span class="msg">Warning: This is a warning alert!</span>
+      <div class="close-btn">
+        <span class="fas fa-times"></span>
+      </div>
+    </div>
+    <!--  <div class="background">
+      <p class="register-form-text">Register Form</p>
+      <div>
+        <input type="text" />
+        <button>Submit</button>
+      </div>
+    </div>-->
+    <div id="container">
+      <div class="form-wrap">
+        <h1>Send your Letters</h1>
+        <p>
+          All these letters will be confidential and encrypted when saved to the
+          database.
+        </p>
+        <p style="margin-top: 5px; margin-bottom: 15px">
+          Remember you can only send one letter PER account! Choose your words
+          wisely!
+        </p>
+        <form id="letter-form">
+          <textarea
+            class="auto-growing-textarea"
+            id="letter-input"
+            placeholder="Type your letter here..."
+          ></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <footer>
+        <p class="dynamic-name"></p>
+        <a href="/">Log out</a>
+      </footer>
+      <script src="../src/letters.js"></script>
+      <script src="../src/error-message.js"></script>
+    </div>
+  </body>
+</html>

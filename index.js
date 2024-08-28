@@ -10,6 +10,9 @@ const xss = require('xss-clean');
 const express = require('express');
 const app = express();
 
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
 const connectDB = require('./db/connect');
 // const authenticateUser = require('./middleware/authenticate');
 
@@ -30,10 +33,17 @@ app.use(xss());
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/letters', authenticateUser, letterRouter);
 
-//Default Get
-// app.get('/', (req, res) => {
-// res.send("<a href = 'replit.dev/api/v1/letters'></a>")
-// })
+//Default Gets
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './public/html', 'register.html'));
+});
+app.get('/login', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './public/html', 'login.html'));
+});
+
+// app.get('/letters', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, './public/html', 'letters.html'));
+// });
 
 //Middleware
 app.use(errorHandlerMiddleware);

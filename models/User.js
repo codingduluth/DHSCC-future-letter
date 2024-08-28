@@ -1,33 +1,33 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please provide your name"],
+    required: [true, 'Please provide your name'],
     trim: true,
     maxlength: 50,
     minlength: 3,
   },
   email: {
     type: String,
-    required: [true, "Please provide email"],
+    required: [true, 'Please provide email'],
     match: [
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      "Please provide a valid email",
+      'Please provide a valid email',
     ],
     unique: true,
   },
   password: {
     type: String,
-    required: [true, "Please provide your password"],
+    required: [true, 'Please provide your password'],
     minlength: 6,
   },
 });
 
-UserSchema.pre("save", async function () {
-  if (!this.isModified("password")) {
+UserSchema.pre('save', async function () {
+  if (!this.isModified('password')) {
     next();
   }
 
@@ -41,7 +41,7 @@ UserSchema.methods.createJWT = function () {
     process.env.JWT_SECRET,
     {
       expiresIn: process.env.JWT_EXPIRE,
-    },
+    }
   );
 };
 
@@ -50,4 +50,4 @@ UserSchema.methods.comparePassword = async function (canditatePassword) {
   return isMatch;
 };
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model('User', UserSchema);
