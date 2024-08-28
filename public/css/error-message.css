@@ -6,14 +6,16 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-html,
-body {
+html {
   height: 100%;
 }
 body {
   display: grid;
+  row-gap: -100px;
   place-items: center;
   overflow: hidden;
+  z-index: 100;
+  margin-top: 5%;
 }
 
 .alert {

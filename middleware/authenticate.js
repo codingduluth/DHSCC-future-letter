@@ -3,10 +3,8 @@ const jwt = require('jsonwebtoken');
 const { UnauthenticatedError } = require('../errors');
 
 const auth = async (req, res, next) => {
-  console.log('Request Headers:', req.headers);
   const authHeader = req.headers.authorization;
 
-  console.log('Authorization Header:', authHeader);
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     throw new UnauthenticatedError('Please provide a valid token');
   }

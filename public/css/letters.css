@@ -89,3 +89,31 @@ footer {
 footer a {
   color: #9d42ed;
 }
+
+.get-button {
+  background-color: rgb(8, 164, 8);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  width: 200px;
+
+  color: white;
+  border: none;
+  transition: 0.25s;
+}
+.get-button:hover {
+  background-color: rgb(235, 112, 112);
+}
+
+.countdown-element {
+  display: grid;
+  place-items: center;
+  row-gap: 15px;
+  margin-top: 50px;
+}
+
+.countdown {
+  margin-bottom: 15px !important;
+  font-weight: 300;
+}

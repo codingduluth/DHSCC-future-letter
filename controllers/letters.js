@@ -2,9 +2,17 @@ require('dotenv').config();
 const { StatusCodes } = require('http-status-codes');
 const Letter = require('../models/Letter');
 const crypto = require('crypto');
+const BadRequestError = require('../errors');
 
 //Get letter
 const getLetter = async (req, res) => {
+  var end = new Date('05/15/2025 2:00 PM');
+  var now = new Date();
+
+  if (now < end) {
+    throw new Error('Countdown is not over yet!');
+  }
+
   const createdBy = req.user.userId;
 
   const letter = await Letter.findOne({ createdBy });
