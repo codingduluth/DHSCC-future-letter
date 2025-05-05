@@ -40,3 +40,18 @@ document
       alert('An unexpected error occurred. Please try again.');
     }
   });
+
+// Show password
+const passwordField = document.getElementById('password');
+
+const showPasswordButton = document.getElementById('show-password');
+
+showPasswordButton.addEventListener('click', function () {
+  if (passwordField.type === 'password') {
+    passwordField.type = 'text';
+    showPasswordButton.innerHTML = 'Hide';
+  } else {
+    passwordField.type = 'password';
+    showPasswordButton.innerHTML = 'Show';
+  }
+});

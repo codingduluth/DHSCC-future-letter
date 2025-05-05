@@ -22,7 +22,6 @@ a {
 .form-wrap {
   background: #ffff;
   padding: 15px 25px;
-  color: #333;
   border-top: 4px solid #9d42ed;
   border-radius: 0.5px;
   padding-bottom: 25px;
@@ -40,7 +39,6 @@ a {
 
 .form-wrap .form-group label {
   display: block;
-  color: #666;
 }
 
 .form-wrap .form-group input {
@@ -78,4 +76,11 @@ footer {
 
 footer a {
   color: #9d42ed;
+}
+
+.show-password {
+  color: #9d42ed;
+  right: 10px;
+  top: 50%;
+  cursor: pointer;
 }

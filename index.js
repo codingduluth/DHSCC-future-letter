@@ -66,10 +66,10 @@ app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);
 
 const port = process.env.PORT || 3000;
-
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
+    console.log('Finished connecting to DB');
     app.listen(port, async () => {
       console.log('Server is running on port 3000');
     });
